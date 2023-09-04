@@ -2,12 +2,13 @@ from live_music_cardiff import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
+
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(1000))
-    venue = db.Column(db.String(200))
-    postcode = db.Column(db.String(8))
-    description = db.Column(db.String(10000))
+    title = db.Column(db.String(1000), nullable=False)
+    venue = db.Column(db.String(200), nullable=False)
+    postcode = db.Column(db.String(8), nullable=False)
+    description = db.Column(db.String(10000), nullable=False)
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

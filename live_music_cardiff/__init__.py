@@ -1,16 +1,13 @@
 import os
+import re
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from os import path
-
 if os.path.exists("env.py"):
     import env  # noqa
 
-
-
-
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+
 
 if os.environ.get("DEVELOPMENT") == "True":
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
@@ -23,13 +20,4 @@ else:
 
 db = SQLAlchemy(app)
 
-from .models import *
-
-create_database(app)
-
 from live_music_cardiff import routes  # noqa
-
-def create_database(app):
-    if not path.exists('live_music_cardiff' + DB_NAME):
-        db.create_all(app=app)
-        print('Created database!')
