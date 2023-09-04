@@ -1,9 +1,12 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from os import path
 
 if os.path.exists("env.py"):
     import env  # noqa
+
+
 
 
 app = Flask(__name__)
@@ -20,4 +23,13 @@ else:
 
 db = SQLAlchemy(app)
 
+from .models import *
+
+create_database(app)
+
 from live_music_cardiff import routes  # noqa
+
+def create_database(app):
+    if not path.exists('live_music_cardiff' + DB_NAME):
+        db.create_all(app=app)
+        print('Created database!')
