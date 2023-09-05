@@ -3,6 +3,13 @@ from live_music_cardiff import app, db
 from live_music_cardiff.models import Event, User
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import login_user, login_required, logout_user, current_user, LoginManager
+
+login = LoginManager(app)
+
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
 
 
 @app.route("/")
@@ -15,7 +22,7 @@ def sign_up():
     if request.method == 'POST':
         email = request.form.get('email')
         first_name = request.form.get('firstName')
-        password1 = request.form.get('password2')
+        password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
         user = User.query.filter_by(email=email).first()
@@ -37,26 +44,28 @@ def sign_up():
             flash('Account created!', category='success')
             return redirect(url_for('home'))
     return render_template("sign_up.html")
-      
+
 
 @app.route('/signin', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
-        password = request.form.get('password')
+        print(email)
+        password = request.form.get('password1')
 
         user = User.query.filter_by(email=email).first()
+        
         if user:
+            print(user.password)
+            print(password)
             if check_password_hash(user.password, password):
-                print('logged in!')
                 flash('Logged in successfully!', category='success')
+                login_user(user, remember=True)
+                return redirect(url_for('home'))
             else:
-                print('wrong password')
                 flash('Incorrect password, try again', category='error')
         else:
-            print('email does not exist')
             flash('Email does not exist.', category='error')
-    print('did nothing')
     return render_template("login.html", boolean=True)
 
 
