@@ -7,6 +7,7 @@ from flask_login import login_user, login_required, logout_user, current_user, L
 
 login = LoginManager(app)
 
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
@@ -78,7 +79,28 @@ def logout():
     return redirect(url_for('login'))
 
 
-@app.route('/add_event')
+@app.route('/add_event', methods=["GET", "POST"])
 @login_required
 def add_event():
+    print(current_user.id)
+    if request.method == "POST":
+        event = Event(
+            title=request.form.get("title"),
+            venue=request.form.get("venue"),
+            postcode=request.form.get("postcode"),
+            description=request.form.get("description"),
+            date=request.form.get("date"),
+            user_id=current_user.id)
+        print(event.title)
+        db.session.add(event)
+        db.session.commit()
+        flash('Event Added!', category='success')
+
+        return redirect(url_for('home'))
     return render_template("add_event.html", user=current_user)
+
+
+@app.route('/all_events')
+def all_events():
+    event = list(Event.query.order_by(Event.title).all())
+    return render_template("all_events.html", user=current_user, event=event)
