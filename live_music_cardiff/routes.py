@@ -81,4 +81,4 @@ def logout():
 @app.route('/add_event')
 @login_required
 def add_event():
-    render_template("add_event.html", user=current_user)
+    return render_template("add_event.html", user=current_user)
