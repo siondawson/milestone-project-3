@@ -22,4 +22,5 @@ else:
 
 db = SQLAlchemy(app)
 
+
 from live_music_cardiff import routes  # noqa

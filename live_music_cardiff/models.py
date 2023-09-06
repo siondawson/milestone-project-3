@@ -2,6 +2,7 @@ from live_music_cardiff import app, db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
+
 class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(1000), nullable=False)

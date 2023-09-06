@@ -3,7 +3,7 @@ from live_music_cardiff import app, db
 from live_music_cardiff.models import Event, User
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, login_required, logout_user, current_user, LoginManager
+from flask_login import login_user, login_required, logout_user, current_user, LoginManager  # noqa
 
 login = LoginManager(app)
 
@@ -14,7 +14,8 @@ def load_user(id):
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    user = current_user
+    return render_template("home.html", user=current_user)
 
 
 @app.route("/sign_up", methods=['GET', 'POST'])
@@ -38,12 +39,13 @@ def sign_up():
         elif len(password1) < 7:
             flash('Password must be at least 7 characters', category='error')
         else:
-            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256')) #noqa
+            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))  # noqa
             db.session.add(new_user)
             db.session.commit()
+            login_user(user, remember=True)
             flash('Account created!', category='success')
             return redirect(url_for('home'))
-    return render_template("sign_up.html")
+    return render_template("sign_up.html", user=current_user)
 
 
 @app.route('/signin', methods=['GET', 'POST'])
@@ -66,9 +68,17 @@ def login():
                 flash('Incorrect password, try again', category='error')
         else:
             flash('Email does not exist.', category='error')
-    return render_template("login.html", boolean=True)
+    return render_template("login.html", user=current_user)
 
 
 @app.route('/signout')
+@login_required
 def logout():
-    return "<p>Logout</p>"
+    logout_user()
+    return redirect(url_for('login'))
+
+
+@app.route('/add_event')
+@login_required
+def add_event():
+    render_template("add_event.html", user=current_user)

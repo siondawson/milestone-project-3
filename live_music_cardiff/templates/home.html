@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Live Music Cardiff</h1>
+<div class="container row">
+    <div class="col text-center">
+        <h1>Live Music Cardiff</h1>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">Welcome {{ user.first_name }}</h5>
+                <p class="card-text">You are now logged in</p>
+                <a href="#" class="btn btn-primary">Your events</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
