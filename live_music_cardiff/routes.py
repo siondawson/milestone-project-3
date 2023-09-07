@@ -104,3 +104,10 @@ def add_event():
 def all_events():
     event = list(Event.query.order_by(Event.title).all())
     return render_template("all_events.html", user=current_user, event=event)
+
+
+@app.route('/user_events')
+def user_events():
+    user = current_user
+    user_events = Event.query.order_by(Event.title).filter_by(user_id=current_user.id)
+    return render_template("user_events.html", user=current_user, user_events=user_events)

@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>All Events</h1>
+
+<h1 class="text-center">All Events</h1>
 <div class="container row">
     {% for event in event %}
-    <div class="col text-center">
+    <div class="col-sm-12 col-md-6 col-lg-4 justify-content-center">
         <div class="card" style="width: 18rem;">
             <div class="card-body text-center">
                 <h5 class="card-title">{{ event.title }}</h5>
                 <p class="card-text">{{ event.date }}</p>
-                <p class="card-text">{{ event.description }}</p>
-                <p class="card-text">USER ID IS: {{ event.user_id }}</p>
+                <p class="card-text">{{ event.venue }}</p>
             </div>
         </div>
     </div>
