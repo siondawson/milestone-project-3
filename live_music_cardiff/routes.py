@@ -129,6 +129,7 @@ def edit_event(event_id):
 @app.route("/delete_event/<int:event_id>")
 def delete_event(event_id):
     user_event = Event.query.get_or_404(event_id)
+    print(user_event)
     db.session.delete(user_event)
     db.session.commit()
     return redirect(url_for("user_events"))
