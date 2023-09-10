@@ -96,7 +96,7 @@ def add_event():
         db.session.commit()
         flash('Event Added!', category='success')
 
-        return redirect(url_for('home'))
+        return redirect(url_for('user_events'))
     return render_template("add_event.html", user=current_user)
 
 
@@ -125,3 +125,10 @@ def edit_event(event_id):
         return redirect(url_for("user_events"))
     return render_template("edit_event.html", user_event=user_event, user=current_user) #user=current_user goes here not at top of function
 
+
+@app.route("/delete_event/<int:event_id>")
+def delete_event(event_id):
+    user_event = Event.query.get_or_404(event_id)
+    db.session.delete(user_event)
+    db.session.commit()
+    return redirect(url_for("user_events"))
