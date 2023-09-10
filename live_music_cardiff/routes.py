@@ -108,6 +108,20 @@ def all_events():
 
 @app.route('/user_events')
 def user_events():
-    user = current_user
     user_events = Event.query.order_by(Event.title).filter_by(user_id=current_user.id)
     return render_template("user_events.html", user=current_user, user_events=user_events)
+
+
+@app.route("/edit_event/<int:event_id>", methods=["GET", "POST"])
+def edit_event(event_id):
+    user_event = Event.query.get_or_404(event_id)
+    if request.method == "POST":
+        user_event.title = request.form.get("title")
+        user_event.venue = request.form.get("venue")
+        user_event.postcode = request.form.get("postcode")
+        user_event.description = request.form.get("description")
+        user_event.date = request.form.get("date")
+        db.session.commit()
+        return redirect(url_for("user_events"))
+    return render_template("edit_event.html", user_event=user_event, user=current_user) #user=current_user goes here not at top of function
+
