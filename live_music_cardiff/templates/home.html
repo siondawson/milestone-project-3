@@ -1,14 +1,27 @@
-{% extends "base.html" %}
-
+{% extends "base.html" %} 
 {% block content %}
-<div class="container row">
-    <div class="col text-center">
-        <h1>Live Music Cardiff</h1>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body text-center">
-                <h5 class="card-title">Welcome {{ user.first_name }}</h5>
-                <p class="card-text">You are now logged in</p>
-                <a href="{{ url_for('add_event')}}" class="btn btn-primary">Your events</a>
+<div class="home-bg-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center pt-5 pb-5">
+            <h1>Live Music Cardiff</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+            {% if user.is_authenticated %}
+            <h3 class="">Welcome {{ user.first_name }}</h3>
+            <p class="">You are now logged in</p>
+            <a
+                href="{{ url_for('add_event')}}"
+                class="btn btn-outline-dark btn-rounded"
+                >Your events</a
+            >
+            {% else %}
+            <h3 class="">Welcome to Live Music Cardiff</h3>
+            <p class="">You are not logged in</p>
+            <a href="{{ url_for('login')}}" class="btn btn-outline-dark btn-rounded">Login</a>
+            {% endif %}
             </div>
         </div>
     </div>

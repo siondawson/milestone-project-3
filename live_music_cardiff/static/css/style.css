@@ -4,6 +4,10 @@ body {
     flex-direction: column;
 }
 
+.vertical-center {
+    vertical-align: middle;
+}
+
 main {
     flex: 1 0 auto;
 }
@@ -14,6 +18,10 @@ main {
 
 .footer {
     background-color: #0a4275 !important;
+}
+
+.home-bg-img {
+    background-image: url("/live_music_cardiff/static/images/wmc.jpg");
 }
 
 /* Datepicker */
