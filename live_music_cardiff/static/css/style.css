@@ -1,6 +1,6 @@
 body {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     flex-direction: column;
 }
 
@@ -21,10 +21,24 @@ main {
 }
 
 .home-bg-img {
-    background-image: url("/live_music_cardiff/static/images/wmc.jpg");
+    background: url("/static/images/wmc.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    height: 85vh;
+    width: 100%;
+    z-index: -1;
+    
 }
 
 /* Datepicker */
 .input-group-append {
     cursor: pointer;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
 }
