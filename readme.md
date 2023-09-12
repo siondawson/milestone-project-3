@@ -66,3 +66,7 @@ After signing in the user will be redirected to this page. This page displays al
 
 A form where users can add the relevant information for their event. Once submit is clicked the event is added to the database and will appear publically for all users to see (signed in and not signed in). The user will then be redirected to the 'My Events' page where event they created will be displayed.
 
+## Edit event
+
+Accessible from the users 'my events' page. When the user clicks edit they are taken to this page where a similar form to the 'add event' page will be pre populated with full information from the event that they have allready supplied ready for editing. 
+
