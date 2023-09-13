@@ -116,8 +116,6 @@ def user_events():
 def edit_event(event_id):
     user = current_user
     user_event = Event.query.get_or_404(event_id)
-    print(user_event.user_id)
-    print(user.id)
     if user_event.user_id == user.id:
         if request.method == "POST":
             user_event.title = request.form.get("title")
@@ -132,14 +130,19 @@ def edit_event(event_id):
     return render_template('home.html', user=current_user)
     
 
-    
+##
+# Function for deleting events. 
+# If statement checks if user id matches the foreign key user_id of event event before deletion.    
 @app.route("/delete_event/<int:event_id>")
 def delete_event(event_id):
     user_event = Event.query.get_or_404(event_id)
-    print(user_event)
-    db.session.delete(user_event)
-    db.session.commit()
-    return redirect(url_for("user_events"))
+    user = current_user
+    if user_event.user_id == user.id:
+        db.session.delete(user_event)
+        db.session.commit()
+        return redirect(url_for("user_events"))
+    flash('You do not have permission to delete this event', category='error')
+    return render_template('home.html', user=current_user)
 
 
 @app.route("/event/<int:event_id>")
