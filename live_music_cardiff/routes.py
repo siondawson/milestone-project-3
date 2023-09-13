@@ -114,18 +114,25 @@ def user_events():
 
 @app.route("/edit_event/<int:event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
+    user = current_user
     user_event = Event.query.get_or_404(event_id)
-    if request.method == "POST":
-        user_event.title = request.form.get("title")
-        user_event.venue = request.form.get("venue")
-        user_event.postcode = request.form.get("postcode")
-        user_event.description = request.form.get("description")
-        user_event.date = request.form.get("date")
-        db.session.commit()
-        return redirect(url_for("user_events"))
-    return render_template("edit_event.html", user_event=user_event, user=current_user) #user=current_user goes here not at top of function
+    print(user_event.user_id)
+    print(user.id)
+    if user_event.user_id == user.id:
+        if request.method == "POST":
+            user_event.title = request.form.get("title")
+            user_event.venue = request.form.get("venue")
+            user_event.postcode = request.form.get("postcode")
+            user_event.description = request.form.get("description")
+            user_event.date = request.form.get("date")
+            db.session.commit()
+            return redirect(url_for("user_events"))
+        return render_template("edit_event.html", user_event=user_event, user=current_user)  # user=current_user goes here not at top of function
+    flash('You do not have permission to edit this event', category='error')
+    return render_template('home.html', user=current_user)
+    
 
-
+    
 @app.route("/delete_event/<int:event_id>")
 def delete_event(event_id):
     user_event = Event.query.get_or_404(event_id)
