@@ -2,24 +2,30 @@
 
 {% block content %}
 
-
-<div class="container row">
-    <h1 class="text-center">{{ user.first_name }}'s Events</h1>
-    {% for user_event in user_events %}
-    <div class="col-sm-12 col-md-6 col-lg-4 justify-content-center">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body text-center">
-                <h5 class="card-title">{{ user_event.title }}</h5>
-                <p class="card-text">{{ user_event.date }}</p>
-                <p class="card-text">{{ user_event.venue }}</p>
-                <a href="{{ url_for('edit_event', event_id=user_event.id) }}" class="btn btn-primary">Edit</a>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ user_event.id }}">
-                    Delete
-                </button>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">{{ user.first_name }}'s Events</h1>
+        </div>
+        {% for user_event in user_events %}
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 justify-content-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ user_event.title }}</h5>
+                        <p class="card-text">{{ user_event.date }}</p>
+                        <p class="card-text">{{ user_event.venue }}</p>
+                        <a href="{{ url_for('edit_event', event_id=user_event.id) }}" class="btn btn-primary">Edit</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ user_event.id }}">
+                            Delete
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Confirm Delete Modal -->
     <div class="modal fade" id="delete-modal-{{ user_event.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

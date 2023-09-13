@@ -4,6 +4,25 @@ body {
     flex-direction: column;
 }
 
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+        
+}
+
+
+
+.navbar-brand {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.navbar-nav {
+    font-family: 'Roboto', sans-serif;
+}
+
 .vertical-center {
     vertical-align: middle;
 }
@@ -20,7 +39,7 @@ main {
     background-color: #0a4275 !important;
 }
 
-.home-bg-img {
+/* .home-bg-img {
     background: url("/static/images/wmc.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -31,6 +50,32 @@ main {
     width: 100%;
     z-index: -1;
     
+} */
+
+ 
+/* Home Page */
+
+.callout-container {
+    height: 100vh;
+    background: url('/static/images/wmc.jpg') no-repeat bottom center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.opaque-overlay {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Datepicker */
