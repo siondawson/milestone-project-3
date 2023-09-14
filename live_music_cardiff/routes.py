@@ -105,11 +105,11 @@ def add_event():
 @app.route('/all_events')
 def all_events():
     """
-    Lists all events created by all users. 
-    Ideally funtionality added to filter past events but currently this function just lists all events
+    Lists all events created by all users. Past events are filtered out and now shown.
     """
     today = datetime.now()
     event = list(Event.query.filter(Event.date >= today).all())
+    print(today)
     return render_template("all_events.html", user=current_user, event=event)
 
 
