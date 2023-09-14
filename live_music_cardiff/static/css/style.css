@@ -39,6 +39,11 @@ main {
     background-color: #0a4275 !important;
 }
 
+.alert {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
 /* .home-bg-img {
     background: url("/static/images/wmc.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
