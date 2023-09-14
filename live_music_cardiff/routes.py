@@ -1,5 +1,5 @@
 from flask import render_template, request, flash, redirect, url_for
-from datetime import datetime
+from datetime import datetime, date
 from live_music_cardiff import app, db
 from live_music_cardiff.models import Event, User
 from .models import User
@@ -104,7 +104,9 @@ def add_event():
 
 @app.route('/all_events')
 def all_events():
-    event = list(Event.query.order_by(Event.title).all())
+    past_events = Event.objects.filter(event_date__lt=date.today())
+    print(past_events)
+    event = list(Event.query.order_by(Event.date).all())
     return render_template("all_events.html", user=current_user, event=event)
 
 
@@ -134,7 +136,7 @@ def edit_event(event_id):
 
 ##
 # Function for deleting events. 
-# If statement checks if user id matches the foreign key user_id of event event before deletion.    
+# If statement checks if user id matches the foreign key user_id of event before deletion.    
 @app.route("/delete_event/<int:event_id>")
 def delete_event(event_id):
     user_event = Event.query.get_or_404(event_id)
