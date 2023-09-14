@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5, h6 {
         
 }
 
+.event-description {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
 
 
 .navbar-brand {
@@ -88,6 +92,8 @@ main {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    pointer-events: none;
 }
 
 /* Datepicker */
@@ -98,4 +104,35 @@ main {
 .card-container {
     display: flex;
     justify-content: center;
+}
+
+#event-container {
+    width: 50%;
+}
+
+@media only screen and (max-width: 850px) {
+    #event-container {
+        width: 75%;
+    }
+}
+
+
+#login-container {
+    width: 50%;
+}
+
+@media only screen and (max-width: 850px) {
+    #login-container {
+        width: 75%;
+    }
+}
+
+#signup-container {
+    width: 50%;
+}
+
+@media only screen and (max-width: 850px) {
+    #signup-container {
+        width: 75%;
+    }
 }

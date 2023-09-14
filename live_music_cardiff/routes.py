@@ -16,7 +16,7 @@ def load_user(id):
 
 @app.route("/")
 def home():
-    user = current_user  # possibly don't need this
+    user = current_user  # possibly don't need
     return render_template("home.html", user=current_user)
 
 
@@ -113,7 +113,7 @@ def all_events():
     return render_template("all_events.html", user=current_user, event=event)
 
 
-@app.route('/user_events')
+@app.route('/user_events/')
 def user_events():
     """
     Lists all events that the logged in user has created. 

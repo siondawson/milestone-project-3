@@ -12,7 +12,7 @@
                 <hr class="block-divider">
                 <h3 class="">Welcome {{ user.first_name }}</h3>
                 <p>Your guide to live music in Wales' Capital</p>
-                <a id="homeAdd" class="btn btn-outline-light btn-rounded" href="{{ url_for('add_event') }}">Add Event</a>
+                <a class="btn btn-outline-light btn-rounded" href="{{ url_for('add_event') }}">Add Event</a>
             </section>
             {% else %}
             <section class="callout text-center mt-4 p-5 text-white rounded jumbotron">
