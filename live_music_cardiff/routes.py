@@ -104,20 +104,29 @@ def add_event():
 
 @app.route('/all_events')
 def all_events():
-    past_events = Event.objects.filter(event_date__lt=date.today())
-    print(past_events)
-    event = list(Event.query.order_by(Event.date).all())
+    """
+    Lists all events created by all users. 
+    Ideally funtionality added to filter past events but currently this function just lists all events
+    """
+    today = datetime.now()
+    event = list(Event.query.filter(Event.date >= today).all())
     return render_template("all_events.html", user=current_user, event=event)
 
 
 @app.route('/user_events')
 def user_events():
+    """
+    Lists all events that the logged in user has created. 
+    """
     user_events = Event.query.order_by(Event.title).filter_by(user_id=current_user.id)
     return render_template("user_events.html", user=current_user, user_events=user_events)
 
 
 @app.route("/edit_event/<int:event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
+    """
+    Allows user to edit event. 
+    """
     user = current_user
     user_event = Event.query.get_or_404(event_id)
     if user_event.user_id == user.id:
