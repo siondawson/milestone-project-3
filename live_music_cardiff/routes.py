@@ -16,7 +16,7 @@ def load_user(id):
 
 @app.route("/")
 def home():
-    user = current_user
+    user = current_user  # possibly don't need this
     return render_template("home.html", user=current_user)
 
 
