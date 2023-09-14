@@ -19,6 +19,7 @@
 <body>
     
     <header>
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="{{ url_for('home') }}">Live Music Cardiff</a>
@@ -60,28 +61,16 @@
             </div>
         </nav>
     </header>
-
+    <!-- Flash messages / alerts -->
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
                 {% if category == 'error' %}
-                <!-- <div class="alert alert-danger alert-dismissable fade show" role="alert">
-                {{ message }}
-                    <button type="button" class="close" data-bs-dismiss="alert">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div> -->
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <strong>{{ message }}</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 {% else %}
-                <!-- <div class="alert alert-success alert-dismissable fade show" role="alert">
-                    
-                    <button type="button" class="close" data-bs-dismiss="alert">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div> -->
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>{{ message }}</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

@@ -1,4 +1,5 @@
 from flask import render_template, request, flash, redirect, url_for
+from datetime import datetime
 from live_music_cardiff import app, db
 from live_music_cardiff.models import Event, User
 from .models import User
@@ -92,7 +93,7 @@ def add_event():
             description=request.form.get("description"),
             date=request.form.get("date"),
             user_id=current_user.id)
-        print(event.title)
+        print(request.form.get("date"))
         db.session.add(event)
         db.session.commit()
         flash('Event Added!', category='success')
