@@ -10,6 +10,7 @@ class Event(db.Model):
     postcode = db.Column(db.String(8), nullable=False)
     description = db.Column(db.String(10000), nullable=False)
     date = db.Column(db.DateTime(timezone=True), default=func.now())
+    time = db.Column(db.String(10), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
