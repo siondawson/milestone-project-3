@@ -11,6 +11,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">{{ user_event.title }}</a></h5>
                     <p class="card-text">{{ user_event.date.strftime('%A, %d %B %Y') }}</p>
+                    <p class="card-text">{{ user_event.time }}</p>
                     <p class="card-text">{{ user_event.venue }}</p>
                     <a href="{{ url_for('edit_event', event_id=user_event.id) }}" class="btn btn-primary">Edit</a>
                     <!-- Button trigger modal -->

@@ -12,6 +12,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title" id="event-title"><a href="{{ url_for('event', event_id=event.id) }}" >{{ event.title }}</a></h5>
                         <p class="card-text">{{ event.date.strftime('%A, %d %B %Y') }}</p>
+                        <p class="card-text">{{ event.time }}</p>
                         <p class="card-text">{{ event.venue }}, {{ event.postcode }}</p>
                         
                     </div>
