@@ -127,6 +127,12 @@ Accessed via link in cards on the 'User Events' page. Defensive programming firs
   * This website is a python package. Python is used to render the website and pass data between the database (back-end) and the front-end.
 * Flask
   * Flask was used..
+* SQL Alchemy
+  * Used for database management
+* Elephant SQL
+  * Free plan (Tiny Turtle) used to host database on deployed version.
+* Heroku
+  * Used for deployment of live site.
 * Jquery
   * Used primarily for datepicker and timepicker. 
 * Techsini
@@ -136,4 +142,35 @@ Accessed via link in cards on the 'User Events' page. Defensive programming firs
 * Google fonts
   * Used for project font styling.
 
+# Testing
 
+This project is a fully interactive website where users can:
+
+1. View events (with or without logging in)
+2. Create an account
+3. Create events 
+4. Edit events
+5. Delete Events
+
+Testing will be performed on:
+
+1. The websites visual appearence accross all screen sizes.
+2. CRUD functionality.
+3. Login/ Logout/ Signup Functionality
+
+# Test Users
+
+These Test users were created on the live site and may be logged into for testing.
+
+test@email.com, password: sun3451, first name: Sion
+test@test.com, password: 1234567, first name: Tester1 
+
+Feel free to use these test accounts or create your own account. 
+
+## Code Validator testing
+
+HTML ran through validator with no errors found.
+
+CSS ran through validator with no errors found.
+
+Validator screen shots can be found here. 

@@ -16,7 +16,7 @@
                     <label for="date" class="col-1 col-form-label">Date</label>
                     <div class="col-5">
                         <div class="input-group date" id="datepicker">
-                            <input type="text" class="form-control" id="date" name="date" />
+                            <input type="text" class="form-control" id="date" name="date" required/>
                             <span class="input-group-text bg-light d-block">
                                 <i class="fa fa-calendar"></i>
                             </span>
@@ -33,17 +33,17 @@
                     <!-- Venue -->
                     <div class="mb-3">
                         <label for="venue" class="form-label">Venue</label>
-                        <input type="text" class="form-control" name="venue" id="venue" aria-describedby="venue">
+                        <input type="text" class="form-control" name="venue" id="venue" aria-describedby="venue" required>
                     </div>
                     <!-- Postcode -->
                     <div class="mb-3">
                         <label for="postcode" class="form-label">Postcode</label>
-                        <input type="text" class="form-control" name="postcode" id="postcode" aria-describedby="venue">
+                        <input type="text" class="form-control" name="postcode" id="postcode" aria-describedby="venue" required>
                     </div>
                     <!-- Description -->
                     <div class="mb-3">
                         <label for="postcode" class="form-label">Event Description</label>
-                        <textarea name="description" id="description" class="form-control" cols="30" rows="10"></textarea>
+                        <textarea name="description" id="description" class="form-control" cols="30" rows="10" required></textarea>
                     </div>
                     <!-- Submit button -->
                     <button type="submit" class="btn btn-primary">
