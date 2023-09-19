@@ -20,7 +20,7 @@ def load_user(id):
 @app.route("/")
 def home():
     '''
-    Renders home page. Sets the user as current user. 
+    Renders home page. Sets the user as current user.
     '''
     return render_template("home.html", user=current_user)
 
@@ -28,9 +28,11 @@ def home():
 @app.route("/sign_up", methods=['GET', 'POST'])
 def sign_up():
     '''
-    Allows user to sign up. Takes information requested from user on form and adds to 'User' table of the database. 
-    Flash messaged in place to alert user to a series of possible errors with information supplied. 
-    Password requested twice and compared to ensure user has entered correctly. 
+    Allows user to sign up. Takes information requested from user on form and
+    adds to 'User' table of the database.
+    Flash messaged in place to alert user to a series of possible errors with
+    information supplied.
+    Password requested twice and compared to ensure user has entered correctly.
     '''
     if request.method == 'POST':
         email = request.form.get('email')
@@ -45,15 +47,15 @@ def sign_up():
             flash('Email must be greater than 3 characters.', category='error')
         elif len(first_name) < 2:
             flash('First name must be greater than 1 characters.',
-                    category='error')
+                  category='error')
         elif password1 != password2:
             flash('Passwords don\'t match', category='error')
         elif len(password1) < 7:
             flash('Password must be at least 7 characters', category='error')
         else:
             new_user = User(email=email, first_name=first_name,
-            password=generate_password_hash(password1,
-            method='sha256')) 
+                            password=generate_password_hash(password1,
+                                                            method='sha256'))
             db.session.add(new_user)
             db.session.commit()
             user = User.query.filter_by(email=email).first()
@@ -78,7 +80,7 @@ def login():
         password = request.form.get('password1')
 
         user = User.query.filter_by(email=email).first()
-        
+
         if user:
             print(user.password)
             print(password)
@@ -97,7 +99,8 @@ def login():
 @login_required
 def logout():
     '''
-    Logs user out. Once user is logged out they are redirected to the login page. 
+    Logs user out.
+    Once user is logged out they are redirected to the login page.
     '''
     logout_user()
     return redirect(url_for('login'))
@@ -107,7 +110,7 @@ def logout():
 @login_required
 def add_event():
     '''
-    Allows user to add an event. Checks if request method is "POST". 
+    Allows user to add an event. Checks if request method is "POST".
     Takes info provided by user in form and commits to the database.
     Flash message to alert user the event has been added.
     User redirected to user_events page.
@@ -134,7 +137,7 @@ def add_event():
 def all_events():
     """
     Sets variable of 'today' to the current time.
-    Lists all events created by all users. 
+    Lists all events created by all users.
     Past events are filtered out and now shown.
     """
     today = datetime.now()
@@ -145,16 +148,17 @@ def all_events():
 @app.route('/user_events/')
 def user_events():
     """
-    Lists all events that the logged in user has created. 
+    Lists all events that the logged in user has created.
     """
     users_events = Event.query.order_by(Event.title).filter_by(user_id=current_user.id)
-    return render_template("user_events.html", user=current_user, user_events=users_events)
+    return render_template("user_events.html", user=current_user,
+                           user_events=users_events)
 
 
 @app.route("/edit_event/<int:event_id>", methods=["GET", "POST"])
 def edit_event(event_id):
     """
-    Allows user to edit event. 
+    Allows user to edit event.
     Sets user variable to current user.
     Queries database for event_id.
     Pre populates form with information from database ready for editing.
@@ -171,18 +175,21 @@ def edit_event(event_id):
             user_event.time = request.form.get("time")
             db.session.commit()
             return redirect(url_for("user_events"))
-        return render_template("edit_event.html", user_event=user_event, user=current_user)
+        return render_template("edit_event.html", user_event=user_event,
+                               user=current_user)
     flash('You do not have permission to edit this event', category='error')
     return render_template('home.html', user=current_user)
-    
+
 
 @app.route("/delete_event/<int:event_id>")
 def delete_event(event_id):
     '''
-    Function for deleting events. 
-    If statement checks if user id matches the foreign key user_id of event before deletion.  
+    Function for deleting events.
+    If statement checks if user id matches the foreign key user_id
+    of event before deletion.
     If user id matches the events user id foreign key, the event is deleted.
-    If it does not match the user is alerted that they may not delete the event as it does not belong to them.  
+    If it does not match the user is alerted that they may not
+    delete the event as it does not belong to them.
     '''
     user_event = Event.query.get_or_404(event_id)
     user = current_user
@@ -198,7 +205,8 @@ def delete_event(event_id):
 def event(event_id):
     '''
     Takes event id as integer allowing database to be queried for this event
-    so that event data may be displayed on the front end. 
+    so that event data may be displayed on the front end.
     '''
     current_event = Event.query.get_or_404(event_id)
-    return render_template("event.html", event=current_event, user=current_user)
+    return render_template("event.html", event=current_event,
+                           user=current_user)
