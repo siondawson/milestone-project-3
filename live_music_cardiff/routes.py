@@ -11,6 +11,9 @@ login = LoginManager(app)
 
 @login.user_loader
 def load_user(id):
+    '''
+    Returns current user id as integer.
+    '''
     return User.query.get(int(id))
 
 
@@ -174,7 +177,9 @@ def edit_event(event_id):
 def delete_event(event_id):
     '''
     Function for deleting events. 
-    If statement checks if user id matches the foreign key user_id of event before deletion.    
+    If statement checks if user id matches the foreign key user_id of event before deletion.  
+    If user id matches the events user id foreign key, the event is deleted.
+    If it does not match the user is alerted that they may not delete the event as it does not belong to them.  
     '''
     user_event = Event.query.get_or_404(event_id)
     user = current_user
@@ -188,5 +193,9 @@ def delete_event(event_id):
 
 @app.route("/event/<int:event_id>")
 def event(event_id):
+    '''
+    Takes event id as integer allowing database to be queried for this event
+    so that event data may be displayed on the front end. 
+    '''
     event = Event.query.get_or_404(event_id)
     return render_template("event.html", event=event, user=current_user)

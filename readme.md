@@ -78,3 +78,62 @@ Accessible with or without loggin in. This page displays all upcoming events in 
 
 Accessible with or without logging in. This page displays all information available from the database for the event which the user has selected on the 'All Events' page. 
 
+# Design
+
+This projects purpose is to demonstrate ability to work with a database and perform CRUD functionality. Therefore overall design has been kept fairly simple with the goal of facilitating CRUD functionality without complicating visual features. 
+
+## Appearence
+
+### Images
+
+Only a single image of a well known important Cardiff venue is used. 
+
+#CRUD - Create, Read, Update, Delete
+
+## Database Schema
+
+***Database diagram goes here***
+
+A straighforward database schema. of USER and EVENT. The user id appears in the EVENT table as a FOREIGN KEY. The database has been designed this way for comparing of current user id to the user_id of each event. In the early stages of the project design that users must not be able to update or delete events which they have created. 
+
+### Create Functionality
+
+Data is captured via the use of forms. Standard bootsrap forms suited this purpose with layout modifed for intended purpose.
+
+### Read Functionality 
+
+Data is read from the database in two ways.
+
+1. Cards. Bootstrap cards were used to present data at a glance for:
+    1. All Events: Where a user logged in or not can view shorthand information for every event listed including title, venue, date and time.
+    2. User Events: Where logged in users can view events that they have created in a manner similar to above. With added options for them to edit or delete the event.
+2. Event Page. Accessible via a link on each event on the 'All Events'. All available information is displayed on a single page for the spesific event user the has selected.
+
+### Update functionality 
+
+Similar use of forms to 'Create 'Functionality'. Accessed via link in cards on the 'User Events' page. The 'Create Event' Form was duplicated and repurposed for update functionality. Existing event data is pre populated into the form ready for the user to edit. 
+
+### Delete functionality
+
+Accessed via link in cards on the 'User Events' page. Defensive programming first opens a bootstrap modal on clicking 'delete'. User is warned that confriming deletion will pernamently delete the event. 
+
+# Technologies Used
+
+* HTML
+  * HTML was used to complete the structure of the website
+* CSS
+  * CSS was used for custom styling on the website
+* Python
+  * This website is a python package. Python is used to render the website and pass data between the database (back-end) and the front-end.
+* Flask
+  * Flask was used..
+* Jquery
+  * Used primarily for datepicker and timepicker. 
+* Techsini
+  * Used to create apple device mockup for readme.
+* Fontawesome
+  * Used for calendar icons and info icons on homepage.
+* Google fonts
+  * Used for project font styling.
+
+
