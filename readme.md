@@ -174,3 +174,10 @@ HTML ran through validator with no errors found.
 CSS ran through validator with no errors found.
 
 Validator screen shots can be found here. 
+
+## Issues found during testing 
+
+1. Datepicker formatting not working on deployed website, but working when ran locally.
+2. Issues with updating time field.
+   1. Time data not being read by timepicker on loading update event page.
+   2. Time format causing DataError 
