@@ -1,3 +1,6 @@
+/* General */
+
+
 body {
     display: flex;
     height: 100vh;
@@ -13,11 +16,16 @@ h1, h2, h3, h4, h5, h6 {
         
 }
 
-.event-description {
-    font-family: 'Bebas Neue', sans-serif;
+
+/* Flash Messages / Alert */
+
+.alert {
+    border-radius: 0;
+    margin-bottom: 0;
 }
 
 
+/* Nav and footer */
 
 .navbar-brand {
     font-family: 'Bebas Neue', sans-serif;
@@ -25,14 +33,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-nav {
     font-family: 'Roboto', sans-serif;
-}
-
-.vertical-center {
-    vertical-align: middle;
-}
-
-main {
-    flex: 1 0 auto;
 }
 
 .navbar {
@@ -43,72 +43,73 @@ main {
     background-color: #0a4275 !important;
 }
 
-.alert {
-    margin-bottom: 0;
-    border-radius: 0;
+main {
+    flex: 1 0 auto;
 }
 
+
+/* Home Page */
+
+.callout-container {
+    align-items: center;
+    background: url('/static/images/wmc.jpg') no-repeat bottom center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.opaque-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Event info */
+
+.event-description {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+
+/* Event Cards */
+
+
 .card {
-    width: 18rem;
-    box-shadow: 5px 10px 8px #888888;
-    border: 2px solid;
     
+    border: 2px solid;
+    box-shadow: 5px 10px 8px #888888;
+    width: 18rem;
 }
 
 #event-title {
     color: #000;
 }
 
-/* .home-bg-img {
-    background: url("/static/images/wmc.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position: relative;
-    height: 85vh;
-    width: 100%;
-    z-index: -1;
-    
-} */
-
- 
-/* Home Page */
-
-.callout-container {
-    height: 100vh;
-    background: url('/static/images/wmc.jpg') no-repeat bottom center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.opaque-overlay {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* Datepicker */
-.input-group-append {
-    cursor: pointer;
-}
-
 .card-container {
     display: flex;
     justify-content: center;
 }
+
+ 
+/* Datepicker */
+
+.input-group-append {
+    cursor: pointer;
+}
+
+
+/* Event Info Container / Login / Signup forms Sizing */
 
 #event-container {
     width: 50%;
