@@ -22,7 +22,6 @@ def home():
     '''
     Renders home page. Sets the user as current user. 
     '''
-    user = current_user  # possibly don't need
     return render_template("home.html", user=current_user)
 
 
@@ -46,13 +45,15 @@ def sign_up():
             flash('Email must be greater than 3 characters.', category='error')
         elif len(first_name) < 2:
             flash('First name must be greater than 1 characters.',
-                    category='error')  # noqa
+                    category='error')
         elif password1 != password2:
             flash('Passwords don\'t match', category='error')
         elif len(password1) < 7:
             flash('Password must be at least 7 characters', category='error')
         else:
-            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))  # noqa
+            new_user = User(email=email, first_name=first_name,
+            password=generate_password_hash(password1,
+            method='sha256')) 
             db.session.add(new_user)
             db.session.commit()
             user = User.query.filter_by(email=email).first()
@@ -65,9 +66,11 @@ def sign_up():
 @app.route('/signin', methods=['GET', 'POST'])
 def login():
     '''
-    Allows user to log in. User enters email. This is checked again first matching record in database.
+    Allows user to log in. User enters email. This is checked again first
+    matching record in database.
     User enters password and is checked again hashed password in database.
-    Flash messages in place to alert user to errors with their login credentials.
+    Flash messages in place to alert user to
+     errors with their login credentials.
     '''
     if request.method == 'POST':
         email = request.form.get('email')
@@ -144,8 +147,8 @@ def user_events():
     """
     Lists all events that the logged in user has created. 
     """
-    user_events = Event.query.order_by(Event.title).filter_by(user_id=current_user.id)
-    return render_template("user_events.html", user=current_user, user_events=user_events)
+    users_events = Event.query.order_by(Event.title).filter_by(user_id=current_user.id)
+    return render_template("user_events.html", user=current_user, user_events=users_events)
 
 
 @app.route("/edit_event/<int:event_id>", methods=["GET", "POST"])
@@ -197,5 +200,5 @@ def event(event_id):
     Takes event id as integer allowing database to be queried for this event
     so that event data may be displayed on the front end. 
     '''
-    event = Event.query.get_or_404(event_id)
-    return render_template("event.html", event=event, user=current_user)
+    current_event = Event.query.get_or_404(event_id)
+    return render_template("event.html", event=current_event, user=current_user)
