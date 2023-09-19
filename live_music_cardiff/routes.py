@@ -118,7 +118,7 @@ def add_event():
             date=request.form.get("date"),
             time=request.form.get("time"),
             user_id=current_user.id)
-        print(request.form.get("date"))
+        print(request.form.get("time"))
         db.session.add(event)
         db.session.commit()
         flash('Event Added!', category='success')
@@ -165,7 +165,7 @@ def edit_event(event_id):
             user_event.postcode = request.form.get("postcode")
             user_event.description = request.form.get("description")
             user_event.date = request.form.get("date")
-            user_event.date = request.form.get("time")
+            user_event.time = request.form.get("time")
             db.session.commit()
             return redirect(url_for("user_events"))
         return render_template("edit_event.html", user_event=user_event, user=current_user)
