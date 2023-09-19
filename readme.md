@@ -181,3 +181,73 @@ Validator screen shots can be found here.
 2. Issues with updating time field.
    1. Time data not being read by timepicker on loading update event page.
    2. Time format causing DataError 
+
+# Deployment 
+
+This project was created using the code institute template.
+
+## Version Control
+
+This project was created using Visual Studio Code editor and pushed to 'milestone-project-3', a remote repository in github.
+
+Throughout the project these commands were used to save work and push changes to github via the command line terminal.
+
+1. Type: git add .
+    * This command adds files to the staging area before committing.
+2. Type: git commit -m "a message goes in here explaining what chanes were made"
+   * This command commits changes to the local repository
+3. Type: git push
+    * This command commits all changes to the remote GitHub repository.
+
+## Clone the repository to your machine
+
+Navigate to the github repository
+
+1. Click on the code drop down button.
+2. Click HTTPS
+3. Copy repository link
+4. Open your IDE (git must be installed)
+5. Type git clone (copied git url) into the terminal.
+6. The project will now have been cloned on your machine.
+
+
+## Heroku
+
+This project is deployed via Heroku. Heroku is connected to this projects github repository. With every push the deployed Heroku app is updated.
+
+## Database (Elephant SQL)
+
+The deployed website is connected to a database hosted by Elephant SQL.
+
+### Project deployed via Heroku with the following steps.
+
+1. Open command line terminal and type command: pip freeze --local > requirements.txt. This creates a requirements.txt file in the root directory of the repository.
+2. Create Procfile. 
+   1. Create new file in root directory.
+   2. Name it "Procfile"
+   3. Enter following command in the file: "web: python3 app.py"
+3. Commit new files to github
+4. Navigate to Heroku
+5. Click create new app
+6. Name the app (live-music-cardiff)
+7. Enter confirg vars:
+   1. DATABASE_URL : (ElephantSQL URL)
+   2. IP: "0.0.0.0"
+   3. PORT: "5000"
+   4. SECRET_KEY: 
+8. Navigate to Heroku deploy tab
+9. Click connect to github
+   1. Search for correct repository
+   2. Connect
+10. Click Deploy
+11. Add tables to database
+    1. Click 'more'
+    2. Run console
+    3. Type command: python3
+    4. type command: from live_music_cardiff import db
+    5. type command db.create_all()
+    6. type command: exit()
+ 12. Process complete
+
+  
+
