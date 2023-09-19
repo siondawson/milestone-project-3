@@ -29,7 +29,9 @@ This project is a website where users are able to view advertisements for which 
 ### As a frequent user, I want:
 
     1. For other users not to be able to edit or delete my events.
-
+    2. To add new events
+    3. To edit my events
+    4. To see what new events have been added by other users. 
 
 
 # Structure
@@ -247,7 +249,19 @@ The deployed website is connected to a database hosted by Elephant SQL.
     4. type command: from live_music_cardiff import db
     5. type command db.create_all()
     6. type command: exit()
- 12. Process complete
+12. Process complete
+
+## Credits 
+
+The code content of this software was createe by Sion Dawson
+
+## Media 
+
+One image was used on the home page. The source can be found [here](https://pixabay.com/photos/mermaid-quay-wales-cardiff-bay-89121/)
+
+## Acknowledgement
+
+Thankyou to my tutor Daisy McGirr for her help and guidance in this project. Thanks also to my wife Samantha (code institute alumni) for helping me overcome problems and discussing ideas.
 
   
 
