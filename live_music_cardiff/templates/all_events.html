@@ -10,7 +10,7 @@
             <div class="col-sm-12 col-md-6 col-lg-4 pt-5 pb-5 card-container">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h5 class="card-title event-title"><a href="{{ url_for('event', event_id=event.id) }}" >{{ event.title }}</a></h5>
+                        <h5 class="card-title event-title"><a href="{{ url_for('event', event_id=event.id) }}">{{ event.title }}</a></h5>
                         <p class="card-text">{{ event.date.strftime('%A, %d %B %Y') }}</p>
                         <p class="card-text">{{ event.time }}</p>
                         <p class="card-text">{{ event.venue }}, {{ event.postcode }}</p>

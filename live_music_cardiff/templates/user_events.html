@@ -9,7 +9,7 @@
         <div class="col-sm-12 col-md-6 col-lg-4 pt-5 pb-5 card-container">
             <div class="card">
                 <div class="card-body text-center">
-                    <h5 class="card-title">{{ user_event.title }}</a></h5>
+                    <h5 class="card-title">{{ user_event.title }}</h5>
                     <p class="card-text">{{ user_event.date.strftime('%A, %d %B %Y') }}</p>
                     <p class="card-text">{{ user_event.time }}</p>
                     <p class="card-text">{{ user_event.venue }}</p>
@@ -27,11 +27,11 @@
 
 
     <!-- Confirm Delete Modal -->
-    <div class="modal fade" id="delete-modal-{{ user_event.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="delete-modal-{{ user_event.id }}" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                    <h5 class="modal-title">Are you sure?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

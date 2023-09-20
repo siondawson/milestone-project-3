@@ -113,6 +113,10 @@ a {
     cursor: pointer;
 }
 
+/* .timepicker {
+    border: 
+} */
+
 
 /* Event Info Container / Login / Signup forms Sizing */
 
@@ -132,7 +136,7 @@ a {
 }
 
 @media only screen and (max-width: 850px) {
-    #login-container {
+    #login-container, #signup-container {
         width: 75%;
     }
 }
@@ -141,8 +145,8 @@ a {
     width: 50%;
 }
 
-@media only screen and (max-width: 850px) {
-    #signup-container {
-        width: 75%;
+@media only screen and (min-width: 850px) {
+    #edit-container, #add-container {
+        width: 50%;
     }
 }

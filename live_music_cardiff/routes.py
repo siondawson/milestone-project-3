@@ -150,7 +150,8 @@ def user_events():
     """
     Lists all events that the logged in user has created.
     """
-    users_events = Event.query.order_by(Event.title).filter_by(user_id=current_user.id)
+    users_events = Event.query.order_by(Event.title).filter_by(
+                            user_id=current_user.id)
     return render_template("user_events.html", user=current_user,
                            user_events=users_events)
 
