@@ -77,6 +77,14 @@ main {
     background-color: #000000ad;
 }
 
+.home-icon {
+    font-size: 400%;
+}
+
+.icon-text {
+    display: flex;
+    max-width: 50%;
+}
 
 /* Event info */
 
