@@ -81,10 +81,6 @@ main {
     font-size: 400%;
 }
 
-.icon-text {
-    display: flex;
-    max-width: 50%;
-}
 
 /* Event info */
 
@@ -101,8 +97,8 @@ main {
     width: 18rem;
 }
 
-#event-title {
-    color: #000;
+a {
+    color: #000
 }
 
 .card-container {

@@ -8,7 +8,7 @@
             <!-- jumbotron -->
             {% if user.is_authenticated %}
             <section class="callout text-center mt-4 p-5 text-white rounded jumbotron">
-                <h1 class="jumbotron-header">Live Music Cardiff</h1>
+                <h2 class="jumbotron-header">Live Music Cardiff</h2>
                 <hr class="block-divider">
                 <h3 class="">Welcome {{ user.first_name }}</h3>
                 <p>Your guide to live music in Wales' Capital</p>
@@ -16,7 +16,7 @@
             </section>
             {% else %}
             <section class="callout text-center mt-4 p-5 text-white rounded jumbotron">
-                <h1 class="jumbotron-header">Live Music Cardiff</h1>
+                <h2 class="jumbotron-header">Live Music Cardiff</h2>
                 <hr class="block-divider">
                 <p>Your guide to live music in Wales' Capital</p>
                 <a href="{{ url_for('login')}}" class="btn btn-outline-light btn-rounded">Login</a>
