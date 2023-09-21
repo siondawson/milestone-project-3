@@ -71,7 +71,7 @@ This allows users to easily navigate the webite.
 
 ## Home Page
 
-Simple landing page with image of one of Cardiffs premier venues. Text explaining purpose of website with button prompt for user to view all events. 'How it works' section added towards completion of project. See differnces to design section. 
+Simple landing page with image of one of Cardiffs premier venues. Text explaining purpose of website with button prompt for user to view all events. 'How it works' section added towards completion of project. See differences to design section. 
 
 Log in not required. 
 
@@ -154,7 +154,7 @@ A simple clean layout which facilitates the CRUD functionality of the website.
 
 ### Images
 
-Only a single image of a well known important Cardiff venue is used. 
+Only a single image of a well known important Cardiff venue is used. This was chosen to highlight the purposes of the website to promote live music.
 
 # CRUD - Create, Read, Update, Delete
 
@@ -166,7 +166,7 @@ An athentication system was required so that users may log in and view events th
 
 ![er diagram](/assets/er-diagram.png)
 
-A straighforward database schema. of USER and EVENT. The user id appears in the EVENT table as a FOREIGN KEY. The database has been designed this way for comparing of current user id to the user_id of each event. In the early stages of the project design that users must not be able to update or delete events which they have created. 
+A straighforward database schema. of USER and EVENT. The user id appears in the EVENT table as a FOREIGN KEY. The database has been designed this way for comparing of current user id to the user_id of each event. In the early stages of the project design that users must not be able to update or delete events which they have created.
 
 ### Create Functionality
 
@@ -174,13 +174,13 @@ Data is captured via the use of forms. Standard bootsrap forms suited this purpo
 
 #### Signup
 
-Users can create their user data with use of the signup form. Data is stores in the 'User' table. The id column is the primary key. Once this login data is created there is currently no means of updating. This will be left to a future version. 
+Users can create their user data with use of the signup form. Data is stores in the 'User' table. The id column is the primary key. Once this login data is created there is currently no means of updating. This will be left to a future version.
 
 #### Add event
 
-Users can create data by navigating to the add event page. Data is stored in the 'Event' table. Each event has a unique id. The user_id column is a foreign key from the'User' table. 
+Users can create data by navigating to the add event page. Data is stored in the 'Event' table. Each event has a unique id. The user_id column is a foreign key from the'User' table.
 
-Use of the foreign key allows users to 'own' events. Data may be read relating to only one event. 
+Use of the foreign key allows users to 'own' events. Data may be read relating to only one event.
 
 ### Read Functionality
 
@@ -241,15 +241,15 @@ To be able to easily understand the purpose of the site and to easily navigate t
 # Technologies Used
 
 * HTML
-  * HTML was used to complete the structure of the website
+  * HTML was used to complete the structure of the website.
 * CSS
-  * CSS was used for custom styling on the website
+  * CSS was used for custom styling on the website.
 * Python
   * This website is a python package. Python is used to render the website and pass data between the database (back-end) and the front-end.
 * Flask
-  * Flask was used..
+  * Flask was used as a python framework to complete the project.
 * SQL Alchemy
-  * Used for database management
+  * Used for database management.
 * Elephant SQL
   * Free plan (Tiny Turtle) used to host database on deployed version.
 * Heroku
@@ -353,11 +353,17 @@ Feel free to use these test accounts or create your own account.
 
 ## Code Validator testing
 
-HTML ran through validator with no errors found.
+HTML ran through [validator](https://validator.w3.org/) with no errors found.
 
 CSS ran through validator with no errors found.
 
+Python ran through [code institute linter](https://pep8ci.herokuapp.com/) with no errors found
+
 Validator screen shots can be found [here](https://github.com/siondawson/milestone-project-3/tree/main/testing).
+
+## Accessibility check
+
+Check with [WAVE](https://wave.webaim.org/) with no errors found.
 
 ## Issues found during testing 
 
@@ -444,6 +450,3 @@ One image was used on the home page. The source can be found [here](https://pixa
 ## Acknowledgement
 
 Thankyou to my tutor Daisy McGirr for her help and guidance in this project. Thanks also to my wife Samantha (code institute alumni) for helping me overcome problems and discussing ideas.
-
-  
-
