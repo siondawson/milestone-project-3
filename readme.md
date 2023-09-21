@@ -210,7 +210,7 @@ A favicon was added so a user can better recognise the website among multiple br
 
 ## Wireframes
 
-[Wireframes can be found here.](https://github.com/siondawson/milestone-project-3/tree/main/wireframes)
+[Wireframes can be found here.](https://github.com/siondawson/milestone-project-3/tree/main/assets/wireframes)
 
 ## Differences to design
 
