@@ -136,13 +136,19 @@ a {
 }
 
 @media only screen and (max-width: 850px) {
-    #login-container, #signup-container {
+    #login-container {
         width: 75%;
     }
 }
 
 #signup-container {
     width: 50%;
+}
+
+@media only screen and (max-width: 850px) {
+    #signup-container {
+        width: 75%;
+    }
 }
 
 @media only screen and (min-width: 850px) {
