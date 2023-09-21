@@ -1,5 +1,7 @@
 # Milestone Project 3 - Live Music Cardiff
 
+![multi device mockup](/assets/multi-device-mockup.png)
+
 ## Purpose
 
 This website was created for Code Institue's Milestone Project 3 assignment. The Purpose of the project is to demonstrate an understanding of working with a database where users are able to Create, Read, Update and Delete data entirely within the website. A full list of technologies used can be found in the technologies section of this readme.
@@ -269,6 +271,129 @@ test@email.com, password: sun3451, first name: Sion
 test@test.com, password: 1234567, first name: Tester1 
 
 Feel free to use these test accounts or create your own account. 
+
+# Test Cases
+
+ Outer pipes  Cell padding
+No sorting
+| **Test Case** | **Description**                                                                                                                                                       | **Steps**                                                                                                                                                                                            | **Expected Result**                                                                                                   | **Actual Result**                                                                                                     | **PASS/ FAIL** | **Notes**                                                                                                                                                               |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|               | Visual Testing                                                                                                                                                        |
+| **1**         | Chrome browser Responsiveness test                                                                                                                                    | Open website in Chrome browsers
+
+Right click > inspect
+
+Click toggle device toolbar
+
+Set zoom to 50%
+
+Click and drag the responsive window from 300px to 3000px.
+
+Repeat steps 1-5 across all pages  | Layout adjusts correctly for all screen sizes.                                                                        | Layout adjusts correctly for all screen sizes.                                                                        | PASS           | See screenshots in project repo.                                                                                                                                        |
+| **2**         | Firefox browser Responsiveness test                                                                                                                                   | Open website in Firefox browsers
+
+Right click > inspect
+
+Click toggle device toolbar
+
+Set zoom to 50%
+
+Click and drag the responsive window from 300px to 3000px.
+
+Repeat steps 1-5 across all pages | Layout adjusts correctly for all screen sizes.                                                                        | Layout adjusts correctly for all screen sizes.                                                                        | PASS           |                                                                                                                                                                         |
+| **3**         | Opera browser Responsiveness test                                                                                                                                     | Open website in Opera browsers
+
+Right click > inspect
+
+Click toggle device toolbar
+
+Set zoom to 50%
+
+Click and drag the responsive window from 300px to 3000px.
+
+Repeat steps 1-5 across all pages   | Layout adjusts correctly for all screen sizes.                                                                        | Layout adjusts correctly for all screen sizes.                                                                        | PASS           |                                                                                                                                                                         |
+|               | Navbar/ Footer testing (base.html)                                                                                                                                    |
+| **4**         | Navbar test - logged out                                                                                                                                              | 1.  Open website in browser.
+2.  Ensure user is logged out
+3.  Explore nav links.                                                                                                                    | Nav links behave and link pages as expected. Only Log In, Sign up and All Events Visible. (non login required pages)  | Nav links behave and link pages as expected.                                                                          | PASS           | Nav bar is rendered from a base template and is identical across all pages.                                                                                             |
+| **4**         | Navbar test - logged in                                                                                                                                               | 1.  Open website in browser.
+2.  Ensure user is logged in
+3.  Explore nav links.                                                                                                                     | Nav links behave and link pages as expected. Add Event, Log Out, All Events and My Events visible                     | Nav links behave and link pages as expected. Add Event, Log Out, All Events and My Events visible                     | PASS           |                                                                                                                                                                         |
+| **5**         | Footer Test - logged out                                                                                                                                              | 1.  Open website in browser
+2.  Ensure user is logged out.
+3.  Click button link to sign up.                                                                                                        | User is navigated to signup page                                                                                      | User is navigated to signup page                                                                                      |                | Jinja if statement used to change content of footer depending wether user is logged in.                                                                                 |
+| **6**         | Footer Test - logged out                                                                                                                                              | 1.  Open website in browser
+2.  Ensure user is logged in.
+3.  Click button link to add event                                                                                                        | User is navigated to add event page                                                                                   | User is navigated to add event page                                                                                   |                |                                                                                                                                                                         |
+|               | Log in / Log out testing                                                                                                                                              |
+| **7**         | Log in test                                                                                                                                                           | 1.  Open Website
+2.  Ensure user is logged out.
+3.  Navigate to log in page
+4.  Enter login details (test user: test@email.com, password: sun3451.                                                  | User redirected to home page in logged in status. Flash message confirms log in. User first name displayed on screen. | User redirected to home page in logged in status. Flash message confirms log in. User first name displayed on screen. | PASS           |                                                                                                                                                                         |
+| **8**         | Log out test                                                                                                                                                          | 1.  Perform previous test.
+2.  Navigate to Log out
+
+<br>                                                                                                                                             | User redirected to login page. Nav and footer in logged out status.                                                   | User redirected to login page. Nav and footer in logged out status.                                                   |                |                                                                                                                                                                         |
+|               | CRUD testing                                                                                                                                                          |
+| **9**         | New user test                                                                                                                                                         | 1.  Open website in browser
+2.  Navigate to Sign Up
+3.  Enter Valid Data: email: test@test.com, first name: Tester1, password: 1234567                                                               | New User Created                                                                                                      | New User Created                                                                                                      | PASS           |                                                                                                                                                                         |
+| **10**        | New user test: invalid data: password match                                                                                                                           | 1.  Open website in browser
+2.  Navigate to Sign Up
+3.  Enter invalid Data: email: tester@tester.com, first name: Tester2, password: 1234567, password (confirm): 7654321                            | Flashed message advising passwords don’t match                                                                        | Flashed message advising passwords don’t match                                                                        | PASS           |                                                                                                                                                                         |
+| **11**        | New user test: invalid data: email already exists                                                                                                                     | 1.  Open website in browser
+2.  Navigate to Sign Up
+3.  Enter invalid Data (from prior test): email: [test@test.com](mailto:test@test.com), first name: Tester1, password: 1234567                   | Flashed message: email already exists                                                                                 | Flashed message: email already exists                                                                                 | PASS           |                                                                                                                                                                         |
+| **12**        | Other invalid data tests.
+
+<br>
+
+1. email must be greater than 3 characters
+2. password must be greater than 7 characters
+3. Name must be greater than 1 character | 1.  Open website in browser
+2. Navigate to Sign Up
+3. Enter invalid Data as described.                                                                                                             | Project will not allow account creation unless data provided is valid.                                                | Project will not allow account creation unless data provided is valid.                                                | PASS           |                                                                                                                                                                         |
+| **13**        | Create Event Test                                                                                                                                                     | 1.  Open website in browser
+2. Log in
+3. Navigate to Add Event
+4. Complete form
+5. Click “add event”                                                                                            | New event added. Visible in currents users ‘My Events’ and in ‘All Events’.,                                          | New event added. Visible in currents users ‘My Events’ and in ‘All Events’.,                                          | PASS           | This test has been performed on many events across multiple users.                                                                                                      |
+| **14**        | Read Event Test                                                                                                                                                       | 1.  Open website.
+2. Navigate to ‘All Events’
+3. Follow link from card to event page.
+4. Ensure data matches event card selected and reads correctly.                                            | Data is read from database correctly.                                                                                 | Data is read from database correctly.                                                                                 | PASS           | On deployed site jquery date formatting not working.  Further note: This issue seems to have resolved itself!                                                           |
+| **15**        | Update Event Test                                                                                                                                                     | 1.  Perform previous test
+2. Navigate to ‘my events’.
+3. Click ‘edit’ on any event
+4. Ensure data loaded matches event selected for editing.
+5. Amend event data                                 | Event Data amended.                                                                                                   | Time throwing syntax error                                                                                            | FAIL           | Duplicated variable name in routes.py causing this issue. Error caused by adding ‘time’ column and making error in updating code to suit. **Current test status: PASS** |
+| **16**        | Delete Event Test                                                                                                                                                     | 1.  Open website
+2. Log in
+3. Create event if none exist
+4. Navigate to ‘my ‘events
+5. Click delete
+6. Confim in modal                                                                          | Correct event deleted, with modal for opening for confirmation of delete (event not deleted if user exits modal)      | Correct event deleted, with modal for opening for confirmation of delete (event not deleted if user exits modal)      | PASS           |                                                                                                                                                                         |
+| **17**        | Edit another users event.                                                                                                                                             | 1.  Open website
+2. Log in
+3. Navigate to ‘my events’
+4. click edit any event
+5. change event id in URL to another users event.                                                                  | Redirected to home page. Flash message appears saying ‘you do not have permission to edit this event’                 | Redirected to home page. Flash message appears saying ‘you do not have permission to edit this event’                 | PASS           |                                                                                                                                                                         |
+| **18**        | Add event: invalid data. Postcode                                                                                                                                     | 1.  Open website
+2. Log in
+3. navigate to add event.
+4. Enter invalid postcode data (in test postcode entered twice)
+
+<br>                                                                       | Form rejects data                                                                                                     | Server error page displays (data above models character limit)                                                        | FAIL           | maxlength attribute (8 chars) added to form. **Current status: PASS**                                                                                                   |
+| **19**        | Read users events test                                                                                                                                                | 1.  Open website
+2.  Sign up + log in with new user
+3.  navigate to my events
+
+<br>
+
+<br>                                                                                                            | Only data for events which logged in user is shown here.                                                              | Only data for events which logged in user is shown here.                                                              | PASS           | Message stating no events are been created by user if no events could be added.                                                                                         |
+📋 Copy
+Clear
+Buy Me a Coffee at ko-fi.com
 
 ## Code Validator testing
 
