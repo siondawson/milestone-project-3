@@ -159,7 +159,7 @@ A simple clean layout which facilitates the CRUD functionality of the website.
 
 Only a single image of a well known important Cardiff venue is used. 
 
-#CRUD - Create, Read, Update, Delete
+# CRUD - Create, Read, Update, Delete
 
 ### Authentication
 
@@ -167,7 +167,7 @@ An athentication system was required so that users may log in and view events th
 
 ## Database Schema
 
-![er diagram](/screenshots/db-diagram/er-diagram.png)
+![er diagram](/assets/er-diagram.png)
 
 A straighforward database schema. of USER and EVENT. The user id appears in the EVENT table as a FOREIGN KEY. The database has been designed this way for comparing of current user id to the user_id of each event. In the early stages of the project design that users must not be able to update or delete events which they have created. 
 
