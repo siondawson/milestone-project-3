@@ -16,36 +16,34 @@ This project is a website where users are able to view advertisements for which 
 
 ### As a first time user, I want:
 
-    1. To be able to easily understand the purpose of the site.
-    2. To easily navigate the website.
-    3. To be able to view events that have allready been added by other users
-    4. To learn more details of each event.
-    5. To be able to create an acccount.
-    6. To list my own event
-    7. To be able to edit or delete the events I create
+1. To be able to easily understand the purpose of the site.
+2. To easily navigate the website.
+3. To be able to view events that have allready been added by other users
+4. To learn more details of each event.
+5. To be able to create an acccount.
+6. To list my own event
+7. To be able to edit or delete the events I create
 
 ### As a returning user, I want:
 
-    1. To be able to see if any new events have been added.
-    2. To be able to edit or delete events which I have added.
-    3. To be able to add new events.
-    4. To see all of the events which I have added. 
-    5. To easily navigate the website.
-    6. For other users not to be able to edit or delete my events.
-    7. To learn more details of other users events.
-    8. 1. To be able to log in
-   
+1. To be able to see if any new events have been added.
+2. To be able to edit or delete events which I have added.
+3. To be able to add new events.
+4. To see all of the events which I have added. 
+5. To easily navigate the website.
+6. For other users not to be able to edit or delete my events.
+7. To learn more details of other users events.
+8. To be able to log in
+
 ### As a frequent user, I want:
 
-
-    1. For other users not to be able to edit or delete my events.
-    2. To add new events
-    3. To edit my events
-    4. To delete my events
-    5. To see what new events have been added by other users. 
-    6. To learn more details of events added by other users. 
-    7. To be able to log in
-
+1. For other users not to be able to edit or delete my events.
+2. To add new events
+3. To edit my events
+4. To delete my events
+5. To see what new events have been added by other users. 
+6. To learn more details of events added by other users. 
+7. To be able to log in
 
 # Structure
 
@@ -91,8 +89,6 @@ This page allows first time and returning users to create an account. Frequent u
 
 Once a user has created their account they are automatically logged in. A login page was created so that if a user is logged out they may log back in. Simple form for users to complete with login credenitals that they created. 
 
-
-
 ## My Events Page (user events)
 
 After signing in the user will be redirected to this page. This page displays all events which the user had created, along with opeion to edit or delete each event. Clicking delete calls a modal where the user is asked to confirm event deletion. Clicking edit on any event will take the user to the edit event page. If the user has not created an event they are prompted to create their first event. Login is required to view this page.
@@ -102,27 +98,28 @@ This Allows all users who have added one or more events to view events which bel
 Fulfiling:
 
 first time user stories: 
-    1. To be able to edit or delete the events I create
+
+1. To be able to edit or delete the events I create
 
 Returning user stories: 
-    1. To be able to see if any new events have been added.
-    2. To be able to edit or delete events which I have added.
-    3. To see all of the events which I have added.
-    4. To easily navigate the website.
+
+1. To be able to see if any new events have been added.
+2. To be able to edit or delete events which I have added.
+3. To see all of the events which I have added.
+4. To easily navigate the website.
 
 Frequent user stores:
-    1. To add new events
-    2. To edit my events
-   
 
+1. To add new events
+2. To edit my events
 
 ## Add Event Page
 
 A form where users can add the relevant information for their event. Once submit is clicked the event is added to the database and will appear publically for all users to see (signed in and not signed in). The user will then be redirected to the 'My Events' page where event they created will be displayed.
 
-Page allows all logged in users to create a new event. 
+Page allows all logged in users to create a new event.
 
-## Edit event Page 
+## Edit event Page
 
 Accessible from the users 'my events' page. When the user clicks edit they are taken to this page where a similar form to the 'add event' page will be pre populated with full information from the event that they have allready supplied ready for editing. 
 
@@ -185,7 +182,7 @@ Users can create data by navigating to the add event page. Data is stored in the
 
 Use of the foreign key allows users to 'own' events. Data may be read relating to only one event. 
 
-### Read Functionality 
+### Read Functionality
 
 Data is read from the database in two ways.
 
@@ -293,7 +290,7 @@ Feel free to use these test accounts or create your own account.
 
 # Test Cases
 
-[Full testing can be found here.](/assets/Live%20Music%20Cardiff%20Testing.pdf)
+[Full testing can be found here.](/testing/live-Music-cardiff-testing.pdf)
 
 ## High level tests against user stories
 
@@ -301,57 +298,57 @@ Feel free to use these test accounts or create your own account.
 
     
 
-    1. To be able to easily understand the purpose of the site.
-        * All content displays correctly on all screen sizes.
-    2. To easily navigate the website.
-       * Simple to use nav system impemented and tested. 
-    3. To be able to view events that have allready been added by other users
-       * Non loged in users can view all listed events in the same way logged in users can. 
-    4. To learn more details of each event.
-       * All users logged in or not can view full event info without logging in 
-    5. To be able to create an acccount.
-       * Signup page implemented so users can add their information to the 'user' table. 
-    6. To list my own event
-       * Add event page implemented to users can create event infomation and add it to the 'event' table. 
-    7. To be able to edit or delete the events I create
-       * Edit and delete functionality so users can peform these tasks within a user interface they will be able to learn to use on the first pass. 
+1. To be able to easily understand the purpose of the site.
+    * All content displays correctly on all screen sizes.
+2. To easily navigate the website.
+    * Simple to use nav system impemented and tested. 
+3. To be able to view events that have allready been added by other users
+    * Non loged in users can view all listed events in the same way logged in users can. 
+4. To learn more details of each event.
+    * All users logged in or not can view full event info without logging in 
+5. To be able to create an acccount.
+    * Signup page implemented so users can add their information to the 'user' table. 
+6. To list my own event
+    * Add event page implemented to users can create event infomation and add it to the 'event' table. 
+7. To be able to edit or delete the events I create
+    * Edit and delete functionality so users can peform these tasks within a user interface they will be able to learn to use on the first pass. 
 
 ### As a returning user, I want
 
-    1. To be able to see if any new events have been added.
-       * All events page updates as new events are added. Events in past are removed from this page so it does not appear cluttered. 
-    2. To be able to edit or delete events which I have added.
-       *  Edit and delete functionality so users can peform these tasks within a user interface they will be able to learn to use on the first pass.
-    3. To be able to add new events.
-       * Logged in users can easily add events to the event table via the add event page
-    4. To see all of the events which I have added. 
-       * My events displays all events the logged in user has created. Past events are displayed so that a user may amend if a similar future event is planned, or delete as they prefer. 
-    5. To easily navigate the website.
-       * Easy to use UI implemented to users may do this.
-    6. For other users not to be able to edit or delete my events.
-       * Measures built into the code to check if an event belongs to the user before allowing user to edit. Deletion of event not created by another is not possible. An admin user able to delete or edit any event would useful in a future version.
-    7. To learn more details of other users events.
-       * All users can access event info for all added events both logged in and logged out.
-    8. To be able to log out
-       * Log out button provided in nav bar. Visible at all times to logged in users. Function tested.
+1. To be able to see if any new events have been added.
+    * All events page updates as new events are added. Events in past are removed from this page so it does not appear cluttered. 
+2. To be able to edit or delete events which I have added.
+    *  Edit and delete functionality so users can peform these tasks within a user interface they will be able to learn to use on the first pass.
+3. To be able to add new events.
+    * Logged in users can easily add events to the event table via the add event page
+4. To see all of the events which I have added. 
+    * My events displays all events the logged in user has created. Past events are displayed so that a user may amend if a similar future event is planned, or delete as they prefer. 
+5. To easily navigate the website.
+    * Easy to use UI implemented to users may do this.
+6. For other users not to be able to edit or delete my events.
+    * Measures built into the code to check if an event belongs to the user before allowing user to edit. Deletion of event not created by another is not possible. An admin user able to delete or edit any event would useful in a future version.
+7. To learn more details of other users events.
+    * All users can access event info for all added events both logged in and logged out.
+8. To be able to log out
+    * Log out button provided in nav bar. Visible at all times to logged in users. Function tested.
 
  
 ### As a frequent user, I want
 
-    1. For other users not to be able to edit or delete my events.
-       *  Measures built into the code to check if an event belongs to the user before allowing user to edit. Deletion of event not created by another is not possible. An admin user able to delete or edit any event would useful in a future version.
-    2. To add new events
-       * Logged in users can easily add new events to events table.
-    3. To edit my events
-       * Logged in users can edit event they have added by going to my events and clicking edit.  
-    4. To delete my events
-       * Users can delete events they have added from the my events page.
-    5. To see what new events have been added by other users. 
-       * Users both logged in and out can view all events added by all users.
-    6. To learn more details of events added by other users.
-       * All users can access event info for all added events both logged in and logged out.
-    7. To be able to log out
-       * Log out button provided in nav bar. Visible at all times to logged in users. Function tested.
+1. For other users not to be able to edit or delete my events.
+    *  Measures built into the code to check if an event belongs to the user before allowing user to edit. Deletion of event not created by another is not possible. An admin user able to delete or edit any event would useful in a future version.
+2. To add new events
+    * Logged in users can easily add new events to events table.
+3. To edit my events
+    * Logged in users can edit event they have added by going to my events and clicking edit.  
+4. To delete my events
+    * Users can delete events they have added from the my events page.
+5. To see what new events have been added by other users. 
+    * Users both logged in and out can view all events added by all users.
+6. To learn more details of events added by other users.
+    * All users can access event info for all added events both logged in and logged out.
+7. To be able to log out
+    * Log out button provided in nav bar. Visible at all times to logged in users. Function tested.
 
 
 ## Code Validator testing
@@ -360,7 +357,7 @@ HTML ran through validator with no errors found.
 
 CSS ran through validator with no errors found.
 
-Validator screen shots can be found here. 
+Validator screen shots can be found [here](https://github.com/siondawson/milestone-project-3/tree/main/testing).
 
 ## Issues found during testing 
 
