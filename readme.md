@@ -14,10 +14,13 @@ This project is a website where users are able to view advertisements for which 
 
 ### As a first time user, I want:
 
-    1. To be able to easily understand the purpose of the site
-    2. To be able to view events that have allready been added by other users
-    3. To be able to create an account and list my own event
-    4. To be able to edit or delete the events I create
+    1. To be able to easily understand the purpose of the site.
+    2. To easily navigate the website.
+    3. To be able to view events that have allready been added by other users
+    4. To learn more details of each event.
+    5. To be able to create an acccount.
+    6. To list my own event
+    7. To be able to edit or delete the events I create
 
 ### As a returning user, I want:
 
@@ -25,6 +28,9 @@ This project is a website where users are able to view advertisements for which 
     2. To be able to edit or delete events which I have added.
     3. To be able to add new events.
     4. To see all of the events which I have added. 
+    5. To easily navigate the website.
+    6. For other users not to be able to edit or delete my events.
+    7. To learn more details of other users events.
    
 ### As a frequent user, I want:
 
@@ -32,6 +38,7 @@ This project is a website where users are able to view advertisements for which 
     2. To add new events
     3. To edit my events
     4. To see what new events have been added by other users. 
+    5. To learn more details of events added by other users. 
 
 
 # Structure
@@ -118,6 +125,36 @@ Similar use of forms to 'Create 'Functionality'. Accessed via link in cards on t
 ### Delete functionality
 
 Accessed via link in cards on the 'User Events' page. Defensive programming first opens a bootstrap modal on clicking 'delete'. User is warned that confriming deletion will pernamently delete the event. 
+
+## Wireframes
+
+[Wireframes can be found here.](https://github.com/siondawson/milestone-project-3/tree/main/live_music_cardiff/static/wireframes)
+
+## Differences to design
+
+During implementation some small design changes were made to better meet user stories.
+
+1. 'How it works' section added to home page. A small section explaining the purpose of the website to a first time user. 3 large font awesome icons with short sentence inform user that they may browse events without signing up, create an account if they have an event to list and add the event once they have created their account. 
+
+This helps fulfil all first time user stories.
+
+2. Button added to event.html. A friend who I asked to test the website suggested adding a 'back button' to the event info page so that the site be more easily navigated. 
+
+This helps fulfil user story: I want to be able to easily navigate the website.
+
+3. 'More info' button added to event cards in all events. In wireframing I intented to use anchor links in the title of each event to link users to the events full info. On using CSS to change the link color to black it became clear that users will require a more of a visual cue to know that further information on each event is available. 
+
+This helps fulfil user stories: 
+    1. I want to be able to easily navigate the website. 
+    2. To learn more details of events added by other users.
+
+4. Dark background added to homepage jumbotron. Added to avoid contrast issues with text on background image.
+
+This helps fulfil user stories:
+
+To be able to easily understand the purpose of the site and to easily navigate the website. 
+
+
 
 # Technologies Used
 
