@@ -10,13 +10,13 @@
                     <!-- Event Title -->
                     <div class="mb-3">
                         <label for="title" class="form-label">Event Title</label>
-                        <input type="text" class="form-control" name="title" id="title" aria-describedby="event title" required>
+                        <input type="text" class="form-control" name="title" id="title" aria-describedby="title" required>
                     </div>
                     <!-- Datepicker (code from https://codepen.io/vsfvjiuv-the-typescripter/pen/mdMeJwL)-->
                     <div class="col-8 mb-3">
                         <label for="date" class="col-1 col-form-label">Date</label>
                         <div class="input-group date" id="datepicker">
-                            <input type="text" class="form-control" id="date" name="date" required/>
+                            <input type="text" class="form-control" id="date" name="date" required>
                             <span class="input-group-text bg-light d-block">
                                 <i class="fa fa-calendar"></i>
                             </span>
@@ -26,10 +26,7 @@
                     <div class="col-4 mb-3">
                         <label for="time" class="form-label">Start Time</label>
                         <div class="input-group time" id="timepicker">
-                            <input type="text" class="form-control timepicker text-center" name="time" id="time" jt-timepicker="" time="model.time" time-string="model.timeString"
-                            default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime"
-                            min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval"
-                            dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" required>
+                            <input type="text" class="form-control timepicker text-center" name="time" id="time" required>
                         </div>
                     </div>
                     <!-- Venue -->
@@ -49,7 +46,7 @@
                     </div>
                     <!-- Submit button -->
                     <button type="submit" class="btn btn-primary mb-3">
-                        Submit <i class="fas fa-plus-square"-></i>
+                        Submit <i class="fas fa-plus-square"></i>
                     </button>
                 </div>
             </form>
