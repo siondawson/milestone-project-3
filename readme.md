@@ -51,25 +51,58 @@ Bootstrap 5 was used to structure the website. As this site is data driven the m
 
 A base html template was used to create the navbar (header) and footer of the website. This is to ensure that the navbar and footer remain consistent in design as the user moves through thr website. 
 
+This allows the user to easily navigate the website with a consistent nav and footer throughout.
+
 ### Nav Bar
 
-In the nav bar an if/else statement was used to control which nav elements a user can see dependant on weather they are logged in or not. 
+In the nav bar an if/else statement was used to control which nav elements a user can see dependant on weather they are logged in or not.
+
+This allows the user to know if they are logged in or out. Hidden nav links to pages that require login ensure non logged in users cannot access pages such as 'my events'.
 
 ### Footer
 
 A simple call to action button with a if/else statement controlling what a user sees dependant on if they are logged in. If the user is not logged in, a button promping them to create an account is visible. If they are a button promping them to add an event is visible.
 
+This allows users to easily navigate the webite.
+
 ## Home Page
 
-Simple landing page with image of one of Cardiffs premier venues. Text explaining purpose of website with button prompt for user to view all events. Log in not required.
+Simple landing page with image of one of Cardiffs premier venues. Text explaining purpose of website with button prompt for user to view all events. 'How it works' section added towards completion of project. See differnces to design section. 
+
+Log in not required. 
+
+This helps first time users understand the purpose of the site, navigate to see other users events and create an account if they wish.
+
+Returning and frequent users can use this landing page to easily navigate to any page of the website they please within on or two clicks. 
 
 ## Signup Page
 
 A form where users are able to create their account. First name, email address and password. The password field appears twice to ensure user types password correctly. Checks in place to ensure email address is valid and not allready in use by another user account.
 
+This page allows first time and returning users to create an account. Frequent users who use the website to only view events may easily create an account if they have an event to add.
+
 ## My Events Page (user events)
 
 After signing in the user will be redirected to this page. This page displays all events which the user had created, along with opeion to edit or delete each event. Clicking delete calls a modal where the user is asked to confirm event deletion. Clicking edit on any event will take the user to the edit event page. If the user has not created an event they are prompted to create their first event. Login is required to view this page.
+
+This Allows all users who have added one or more events to view events which belong to them at a glance. Buttons on each event allow users to quickly and easily delete an event if they wish. Users may also click 'edit' on each respective event to make changes. 
+
+Fulfiling:
+
+First: user first time user stories: 
+    1. To be able to edit or delete the events I create
+
+Returning user stories: 
+    1. To be able to see if any new events have been added.
+    2. To be able to edit or delete events which I have added.
+    3. To see all of the events which I have added.
+    4. To easily navigate the website.
+
+Frequent user stores:
+    1. To add new events
+    2. To edit my events
+   
+
 
 ## Add Event Page
 
@@ -128,7 +161,7 @@ Accessed via link in cards on the 'User Events' page. Defensive programming firs
 
 ## Wireframes
 
-[Wireframes can be found here.](https://github.com/siondawson/milestone-project-3/tree/main/live_music_cardiff/static/wireframes)
+[Wireframes can be found here.](https://github.com/siondawson/milestone-project-3/tree/main/wireframes)
 
 ## Differences to design
 
