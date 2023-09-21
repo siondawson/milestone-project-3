@@ -141,7 +141,8 @@ def all_events():
     Past events are filtered out and now shown.
     """
     today = datetime.now()
-    event = list(Event.query.filter(Event.date >= today).all())
+    event = list(Event.query.filter(Event.date >= today).order_by(
+                            Event.date).all())
     return render_template("all_events.html", user=current_user, event=event)
 
 
@@ -150,7 +151,7 @@ def user_events():
     """
     Lists all events that the logged in user has created.
     """
-    users_events = Event.query.order_by(Event.title).filter_by(
+    users_events = Event.query.order_by(Event.date).filter_by(
                             user_id=current_user.id)
     return render_template("user_events.html", user=current_user,
                            user_events=users_events)
